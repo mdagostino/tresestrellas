@@ -20,9 +20,10 @@ const config = {
   httpsAgent: httpsAgent
 };
 
-bot.command('say hi', (ctx) => {
-  sendMessage('Hola a todos!')
+bot.hears('dame la casaca', ()=>{
+  sendMessage('Estoy en eso!')
 });
+
 
 cron.schedule('*/10 * * * * *', () => {
   axios(config)
