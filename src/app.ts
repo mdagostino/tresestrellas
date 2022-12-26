@@ -34,8 +34,8 @@ cron.schedule('*/10 * * * * *', () => {
             result += `size: ${variation.size} availability: ${variation.availability}\n`
           }
           result += `Compra bobo: https://www.adidas.com.ar/camiseta-titular-argentina-3-estrellas-2022/IB3593.html\n`
-          telegram.sendMessage(
-            chatId,
+
+          sendMessage(
             result
           );
         }
@@ -47,10 +47,13 @@ cron.schedule('*/10 * * * * *', () => {
 });
 
 function sendMessage(result: string) {
-  telegram.sendMessage(
-    chatId,
-    result
-  );
+  const chats = chatId.split(',')
+  for (const chat of chats) {
+    telegram.sendMessage(
+      chat,
+      result
+    );
+  }
 }
 
 cron.schedule('*/30 * * * *', () => {
@@ -65,7 +68,7 @@ cron.schedule('*/30 * * * *', () => {
 });
 
 bot.start((ctx) => {
-  ctx.reply('Hello ' + ctx.from.first_name + '!');
+  ctx.reply('Hello ' + ctx.chat.id + '!');
 });
 
 bot.launch();
