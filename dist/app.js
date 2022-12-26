@@ -6,6 +6,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const telegraf_1 = require("telegraf");
 const node_cron_1 = __importDefault(require("node-cron"));
 const axios_1 = __importDefault(require("axios"));
+const express_1 = __importDefault(require("express"));
 const token = process.env.BOT_TOKEN;
 const telegram = new telegraf_1.Telegram(token);
 const bot = new telegraf_1.Telegraf(token);
@@ -51,6 +52,14 @@ bot.start((ctx) => {
     ctx.reply('Hello ' + ctx.from.first_name + '!');
 });
 bot.launch();
+const app = (0, express_1.default)();
+const port = process.env.PORT ?? 3000;
+app.get('/', (req, res) => {
+    res.send('Works!');
+});
+app.listen(port, () => {
+    console.log(`Example app listening on port ${port}`);
+});
 // Enable graceful stop
 process.once('SIGINT', () => bot.stop('SIGINT'));
 process.once('SIGTERM', () => bot.stop('SIGTERM'));

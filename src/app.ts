@@ -2,6 +2,7 @@ import { Context, Markup, Telegraf, Telegram } from 'telegraf';
 import { Update } from 'typegram';
 import cron from 'node-cron';
 import axios from 'axios';
+import express from 'express';
 
 
 const token: string = process.env.BOT_TOKEN as string;
@@ -65,6 +66,17 @@ bot.start((ctx) => {
 });
 
 bot.launch();
+
+const app = express()
+const port = process.env.PORT ?? 3000
+
+app.get('/', (req, res) => {
+  res.send('Works!')
+})
+
+app.listen(port, () => {
+  console.log(`Example app listening on port ${port}`)
+})
 
 // Enable graceful stop
 process.once('SIGINT', () => bot.stop('SIGINT'));
