@@ -26,7 +26,7 @@ node_cron_1.default.schedule('*/10 * * * * *', () => {
         if (status != 'NOT_AVAILABLE') {
             if (chatId) {
                 const variations = response.data['variation_list'];
-                let result = `Dispinible ${status}\n`;
+                let result = `Disponible ${status}\n`;
                 for (const variation of variations) {
                     result += `size: ${variation.size} availability: ${variation.availability}\n`;
                 }
