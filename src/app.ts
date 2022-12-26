@@ -20,6 +20,9 @@ const config = {
   httpsAgent: httpsAgent
 };
 
+bot.command('say hi', (ctx) => {
+  sendMessage('Hola a todos!')
+});
 
 cron.schedule('*/10 * * * * *', () => {
   axios(config)

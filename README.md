@@ -23,6 +23,6 @@ Para empezar a trabajar con el BotFather, debes iniciar una conversación con é
 
 Una vez que hayas creado tu bot, necesitarás obtener su token de acceso. El token de acceso es una cadena de caracteres que te permitirá acceder a la API de Telegram y controlar tu bot. Para obtener el token de acceso, debes seguir las instrucciones del BotFather.
 
-Ahora que tienes tu token de acceso, puedes comenzar a trabajar en el código de tu bot. Existen diferentes formas de hacerlo, pero una opción es utilizar la librería python-telegram-bot, que es una herramienta muy útil para crear bots de Telegram en Python. Con esta librería, podrás enviar mensajes, recibir actualizaciones de usuarios y realizar muchas otras acciones.
+Ahora que tienes tu token de acceso, puedes comenzar a trabajar en el código de tu bot.
 
 Una vez que hayas desarrollado el código de tu bot, es hora de probarlo. Puedes hacerlo enviando mensajes a tu bot desde tu propia cuenta de Telegram o invitando a otras personas a probarlo.
