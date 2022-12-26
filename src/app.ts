@@ -19,7 +19,7 @@ const config = {
 };
 
 
-cron.schedule('*/10 * * * * *', () => {
+cron.schedule('*/30 * * * * *', () => {
   axios(config)
     .then(function (response) {
       const status = response.data["availability_status"]
